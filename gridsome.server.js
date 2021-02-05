@@ -6,8 +6,21 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  api.loadSource(async ({ addCollection }) => {
+    const natureDatas = require('./data/nature.js');
+    const categoryDatas = require('./data/categories.js');
+    const natures = addCollection({ typeName: 'Nature'});
+    const categories = addCollection({ typeName: 'Categories'});
+
+    natures.addReference('categories', 'Categories')
+    
+    for (const data of natureDatas) {
+      natures.addNode(data);
+    }
+
+    for (const data of categoryDatas) {
+      categories.addNode(data);
+    }
   })
 
   api.createPages(({ createPage }) => {

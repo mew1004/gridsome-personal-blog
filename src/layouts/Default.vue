@@ -1,12 +1,11 @@
 <template>
   <div class="layout">
     <header class="header">
-      <!-- <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong> -->
-      <g-image alt="Example image" src="~/favicon.png" width="35" />
+      <g-link to="/">
+        <g-image alt="Example image" src="~/favicon.png" width="35" />
+      </g-link>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Nature</g-link>
+        <g-link class="nav__link" to="/nature/">Nature</g-link>
         <g-link class="nav__link" to="/about/">Welcome</g-link>
       </nav>
     </header>

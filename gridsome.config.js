@@ -17,5 +17,19 @@ module.exports = {
         path: './content/blog/**/*.md',
       }
     }
-  ]
+  ],
+  templates: {
+    Nature: [
+      {
+        path: '/nature/:id',
+        component: './src/templates/Nature.vue'
+      }
+    ],
+    Categories: [
+      {
+        path: '/category/:id',
+        component: './src/templates/Categories.vue'
+      }
+    ]
+  }
 }
